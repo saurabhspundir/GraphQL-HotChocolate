@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "4fa05cfe-278e-44bb-9670-f718665f972d",
+		"name": "GraphQL-HotChocolate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Property-GraphQL",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  property(propertyState: \"nY\"){\r\n    features {\r\n      identificationKey,\r\n      pointFeature,\r\n      relationship\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{graphql-hotchocolate-url}}/api/metadata/",
+					"host": [
+						"{{graphql-hotchocolate-url}}"
+					],
+					"path": [
+						"api",
+						"metadata",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GraphQL",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  property(propertyState: \"CA\"){\r\n    features {\r\n      identificationKey,\r\n      pointFeature,\r\n      relationship\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{graphql-hotchocolate-url}}/graphql",
+					"host": [
+						"{{graphql-hotchocolate-url}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
